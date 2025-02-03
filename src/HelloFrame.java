@@ -2,10 +2,10 @@ import javax.swing.*;
 import java.util.Random;
 
 public class HelloFrame extends JFrame {
-    private JTextField textField1;
+    private JTextField vyp;
     private JButton generujButton;
     private JButton kopirujButton;
-    private JTextField textField2;
+    private JTextField gen;
     private JLabel cislo;
     private JLabel vypis;
     private JPanel panel;
@@ -22,7 +22,7 @@ public class HelloFrame extends JFrame {
         generujButton.addActionListener(e -> generovaniCisel());
         kopirujButton.addActionListener(e -> vypis());
         setSize(800,600);
-       textField1.setEditable(false);
+       vyp.setEditable(false);
 
 
     }
@@ -30,16 +30,16 @@ public class HelloFrame extends JFrame {
     private void generovaniCisel(){
         Random rd = new Random();
         int nahodneCislo = rd.nextInt(100 - 1);
-        textField2.setText(String.valueOf(nahodneCislo));
+        gen.setText(String.valueOf(nahodneCislo));
 
 
 
     }
 
     private void vypis(){
-        String existujiciVypis = textField1.getText();
-        if(textField2.getText().length() != 0){
-            textField1.setText(existujiciVypis + textField2.getText() + "\n");
+        String existujiciVypis = vyp.getText();
+        if(gen.getText().length() != 0){
+            vyp.setText(existujiciVypis + gen.getText() + "\n");
         }
 
 
